@@ -33,11 +33,14 @@ class DevServer extends Base {
 
     const proc = this.proc = spawn(command, args, {
       stdio: [ 'inherit', 'ignore', 'inherit' ],
-      env: {},
+      env: {
+        VUE_CLI_SERVICE_CONFIG_PATH: path.resolve(this.app.config.baseDir, 'app/web/vue.config.js'),
+      },
       cwd: path.resolve(this.app.config.baseDir),
     });
     proc.once('error', err => this.exit(err));
     proc.once('exit', code => this.exit(code));
+
 
     // start dev server asynchronously
     // this.startAsync();

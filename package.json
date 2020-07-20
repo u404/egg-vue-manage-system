@@ -7,11 +7,12 @@
     "declarations": true
   },
   "dependencies": {
-    "egg": "^2.15.1",
-    "egg-scripts": "^2.11.0",
-    "egg-view-nunjucks": "^2.2.0",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
+    "egg": "^2.15.1",
+    "egg-http-proxy": "^1.0.1",
+    "egg-scripts": "^2.11.0",
+    "egg-view-nunjucks": "^2.2.0",
     "element-ui": "^2.11.0",
     "mavon-editor": "^2.6.17",
     "vue": "^2.6.10",
@@ -23,6 +24,8 @@
     "vuedraggable": "^2.17.0"
   },
   "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
     "egg-bin": "^4.11.0",
@@ -30,8 +33,8 @@
     "egg-mock": "^3.21.0",
     "eslint": "^5.13.0",
     "eslint-config-egg": "^7.1.0",
-    "@vue/cli-plugin-babel": "^3.9.0",
-    "@vue/cli-service": "^3.9.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.2",
     "vue-template-compiler": "^2.6.10"
   },
   "engines": {
@@ -47,7 +50,8 @@
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
-    "autod": "autod"
+    "autod": "autod",
+    "vue-test": "vue-cli-service serve --public http://localhost:8002 --port 8002"
   },
   "ci": {
     "version": "10"

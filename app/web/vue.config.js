@@ -1,21 +1,25 @@
+'use strict';
+
 const path = require('path');
+
+console.log('path', path.resolve(__dirname));
 
 module.exports = {
   //   baseUrl: './',
-  publicPath: 'http://localhost:8002',
+  publicPath: 'assets/',
 
   configureWebpack: {
-    context: path.resolve(process.cwd(), 'app/web'),
+    context: path.resolve(__dirname),
 
-    devServer: {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
-    },
+    // devServer: {
+    //   headers: {
+    //     'Access-Control-Allow-Origin': '*',
+    //   },
+    // },
   },
 
-  assetsDir: 'static',
-  productionSourceMap: false,
+  // assetsDir: 'static',
+  // productionSourceMap: false,
   // devServer: {
   //     proxy: {
   //         '/api':{

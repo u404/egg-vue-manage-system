@@ -10,4 +10,11 @@ module.exports = {
     enable: true,
     package: 'egg-view-nunjucks',
   },
+
+  httpProxy: {
+    enable: true,
+    package: 'egg-http-proxy',
+  },
+
+
 };
