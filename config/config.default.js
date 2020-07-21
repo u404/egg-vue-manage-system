@@ -38,11 +38,6 @@ module.exports = appInfo => {
     },
   };
 
-  config.httpProxy = {
-    '/assets': 'http://localhost:8002',
-    '/sockjs-node': 'http://localhost:8002',
-  };
-
   config.security = {
     csrf: {
       enable: false,
@@ -51,6 +46,15 @@ module.exports = appInfo => {
 
   config.devServer = appInfo.env === 'local' && {
     port: 8002,
+  };
+
+  config.httpProxy = appInfo.env === 'local' && {
+    '/assets': `http://localhost:${config.devServer.port}`,
+    '/sockjs-node': `http://localhost:${config.devServer.port}`,
+  };
+
+  config.development = {
+    reloadPattern: [ '**', '!**/web/**/*.*' ],
   };
 
   return {
