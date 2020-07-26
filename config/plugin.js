@@ -16,5 +16,4 @@ module.exports = {
     package: 'egg-http-proxy',
   },
 
-
 };

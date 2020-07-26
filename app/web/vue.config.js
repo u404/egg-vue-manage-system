@@ -8,6 +8,8 @@ module.exports = {
   //   baseUrl: './',
   publicPath: 'assets/',
 
+  outputDir: path.resolve(__dirname, 'dist'),
+
   configureWebpack: {
     context: path.resolve(__dirname),
 
