@@ -6,14 +6,5 @@ module.exports = {
   // static: {
   //   enable: true,
   // }
-  nunjucks: {
-    enable: true,
-    package: 'egg-view-nunjucks',
-  },
-
-  httpProxy: {
-    enable: true,
-    package: 'egg-http-proxy',
-  },
 
 };
