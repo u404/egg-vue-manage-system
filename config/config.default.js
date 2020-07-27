@@ -50,8 +50,6 @@ module.exports = appInfo => {
     port: 8002,
   };
 
-  console.log('app env', appInfo.env);
-
   config.httpProxy = appInfo.env === 'local' && {
     '/assets': `http://localhost:${config.devServer.port}`,
     '/sockjs-node': `http://localhost:${config.devServer.port}`,
@@ -61,10 +59,10 @@ module.exports = appInfo => {
     reloadPattern: [ '**', '!**/web/**/*.*' ],
   };
 
-  config.static = appInfo.env === 'prod' && {
+  config.static = appInfo.env === 'prod' ? {
     prefix: '/assets/',
     dir: path.join(appInfo.baseDir, 'app/web/dist'),
-  };
+  } : {};
 
   return {
     ...config,
